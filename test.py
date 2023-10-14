@@ -1,6 +1,7 @@
 import unittest
 from A1 import preprocessing, train_and_evaluate_random_forest
 
+
 class TestRandomForestClassifier(unittest.TestCase):
     def test_preprocessing(self):
         xtrain, xtest, ytrain, ytest = preprocessing()
@@ -15,6 +16,7 @@ class TestRandomForestClassifier(unittest.TestCase):
         self.assertTrue(0 <= acc_rf <= 100)
         self.assertTrue(0 <= f1_rf <= 100)
         # Add more specific checks if needed
+
 
 if __name__ == '__main__':
     unittest.main()
