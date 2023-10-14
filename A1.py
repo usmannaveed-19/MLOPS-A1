@@ -22,13 +22,11 @@ xtrain, xtest, ytrain, ytest = preprocessing()
 
 
 def train_and_evaluate_random_forest(xtrain, ytrain, xtest, ytest, n_estimators=10, random_state=42):
-
     RF = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state)
     RF.fit(xtrain, ytrain)
     ypred_rf = RF.predict(xtest)
     acc_rf = accuracy_score(ytest, ypred_rf) * 100
     f1_rf = f1_score(ytest, ypred_rf, average='macro') * 100
-
     return acc_rf, f1_rf
 
 
