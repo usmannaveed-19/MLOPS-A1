@@ -12,7 +12,9 @@ def preprocessing():
     print("df: ", df)
     labels = df['target']
     df.drop(columns=['target'], inplace=True)
-    xtrain, xtest, ytrain, ytest = train_test_split(df, labels, test_size=0.3, random_state=42)
+    xtrain, xtest, ytrain, ytest = train_test_split(
+        df, labels, test_size=0.3, random_state=42
+    )
     ytrain = ytrain.values.ravel()
     ytest = ytest.values.ravel()
     return xtrain, xtest, ytrain, ytest
@@ -21,7 +23,9 @@ def preprocessing():
 xtrain, xtest, ytrain, ytest = preprocessing()
 
 
-def train_and_evaluate_random_forest(xtrain, ytrain, xtest, ytest, n_estimators=10, random_state=42):
+def train_and_evaluate_random_forest(
+    xtrain, ytrain, xtest, ytest, n_estimators=10, random_state=42
+):
     RF = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state)
     RF.fit(xtrain, ytrain)
     ypred_rf = RF.predict(xtest)
