@@ -24,11 +24,9 @@ xtrain, xtest, ytrain, ytest = preprocessing()
 
 
 def train_and_evaluate_random_forest(
-    xtrain, ytrain, xtest, ytest, n_estimators=10, 
-    random_state=42
+    xtrain, ytrain, xtest, ytest, n_estimators=10, random_state=42
 ):
-    RF = RandomForestClassifier(n_estimators=n_estimators, 
-                                random_state=random_state)
+    RF = RandomForestClassifier(n_estimators=n_estimators, random_state=random_state)
     RF.fit(xtrain, ytrain)
     ypred_rf = RF.predict(xtest)
     acc_rf = accuracy_score(ytest, ypred_rf) * 100
@@ -37,8 +35,7 @@ def train_and_evaluate_random_forest(
 
 
 # Example usage:
-acc_rf, f1_rf = train_and_evaluate_random_forest(
-    xtrain, ytrain, xtest, ytest)
+acc_rf, f1_rf = train_and_evaluate_random_forest(xtrain, ytrain, xtest, ytest)
 print("Random Forest Classifier Metrics:")
 print("Accuracy: ", acc_rf)
 print("F1 Score: ", f1_rf)
