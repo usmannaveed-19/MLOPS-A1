@@ -8,7 +8,7 @@ def preprocessing():
     data = load_wine()
     df = pd.DataFrame(data.data, columns=data.feature_names)
     df['target'] = data.target
-    # print("df: ", df)
+    print("df: ", df)
     labels = df['target']
     df.drop(columns=['target'], inplace=True)  
     xtrain, xtest, ytrain, ytest = train_test_split(df, labels, test_size=0.3, random_state=42)
