@@ -11,6 +11,7 @@ def preprocessing():
     df['target'] = data.target
     print("df: ", df)
     print("length df: ", len(df))
+    print("Changing to Feature Branch")
     labels = df['target']
     df.drop(columns=['target'], inplace=True)
     xtrain, xtest, ytrain, ytest = train_test_split(
