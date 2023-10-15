@@ -10,6 +10,7 @@ def preprocessing():
     df = pd.DataFrame(data.data, columns=data.feature_names)
     df['target'] = data.target
     print("df: ", df)
+    print("length df: ", len(df))
     labels = df['target']
     df.drop(columns=['target'], inplace=True)
     xtrain, xtest, ytrain, ytest = train_test_split(
