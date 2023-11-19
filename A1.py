@@ -19,6 +19,7 @@ def preprocessing():
     )
     ytrain = ytrain.values.ravel()
     ytest = ytest.values.ravel()
+    print("Preprocessing")
     return xtrain, xtest, ytrain, ytest
 
 
